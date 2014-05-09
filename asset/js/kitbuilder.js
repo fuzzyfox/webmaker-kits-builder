@@ -121,7 +121,7 @@
       kitHTML = kitHTML.replace( 'href="dist/css/style.css"', 'href="https://stuff.webmaker.org/webmaker-kits/v2/css/style.css"' );
       // window.open( 'data:text/plain;' + ( window.btoa ? 'base64,' + btoa( kitHTML ) : kitHTML ) );
 
-      $('<form action="http://localhost:3500/fromdatauri" method="POST">' +
+      $('<form action="http://localhost:3500/fromdatauri" method="POST" target="_blank">' +
           '<input type="hidden" name="data" value="data:text/html;' + ( window.btoa ? 'base64,' + btoa( kitHTML ) : kitHTML ) + '">' +
         '</form>').appendTo('body').submit();
       console.log('submit');
