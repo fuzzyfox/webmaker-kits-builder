@@ -119,7 +119,13 @@
       kitHTML = kitHTML.replace( '\n', '' );
       kitHTML = kitHTML.replace( 'src="dist/js/main.js"', 'src="https://stuff.webmaker.org/webmaker-kits/v2/js/main.js"' );
       kitHTML = kitHTML.replace( 'href="dist/css/style.css"', 'href="https://stuff.webmaker.org/webmaker-kits/v2/css/style.css"' );
-      window.open( 'data:text/plain;' + ( window.btoa ? 'base64,' + btoa( kitHTML ) : kitHTML ) );
+      // window.open( 'data:text/plain;' + ( window.btoa ? 'base64,' + btoa( kitHTML ) : kitHTML ) );
+
+      $('<form action="http://localhost:3500/fromdatauri" method="POST">' +
+          '<input type="hidden" name="data" value="data:text/plain;' + ( window.btoa ? 'base64,' + btoa( kitHTML ) : kitHTML ) + '">' +
+        '</form>').appendTo('body').submit();
+      console.log('submit');
+
       e.preventDefault();
       return false;
     });
