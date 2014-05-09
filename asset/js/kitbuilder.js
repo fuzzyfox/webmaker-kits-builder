@@ -122,7 +122,7 @@
       // window.open( 'data:text/plain;' + ( window.btoa ? 'base64,' + btoa( kitHTML ) : kitHTML ) );
 
       $('<form action="http://localhost:3500/fromdatauri" method="POST">' +
-          '<input type="hidden" name="data" value="data:text/plain;' + ( window.btoa ? 'base64,' + btoa( kitHTML ) : kitHTML ) + '">' +
+          '<input type="hidden" name="data" value="data:text/html;' + ( window.btoa ? 'base64,' + btoa( kitHTML ) : kitHTML ) + '">' +
         '</form>').appendTo('body').submit();
       console.log('submit');
 
